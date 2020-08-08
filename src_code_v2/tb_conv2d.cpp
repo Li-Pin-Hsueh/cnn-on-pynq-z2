@@ -168,7 +168,16 @@ int main(void){
 	conv2d(stream_filter, stream_input, stream_output, input_size, 1, 1);
 
 // print the answer
-	printf("====Output Volume====\n");
+	int output_volume_number = filter_number;
+	int output_volume_size = input_size - filter_size + 1;
+
+	for( count=0; count < output_volume_number; count++ ){
+		printf("====Output Volume %d====", count+1 );
+		for( int k=0; k < (output_volume_size*output_volume_size); k++ ){
+			printf("%d  ", stream_output.read());
+			if( k+1 % output_volume_size == 0 )	printf("\n");
+		}
+	}
 	
 
 }
