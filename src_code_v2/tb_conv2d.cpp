@@ -78,8 +78,7 @@ int main(void){
 		} // end of first input
 	};
 	
-	float filter[filter_number][filter_channel][filter_size][filter_size]=
-	{
+	float filter[filter_number][filter_channel][filter_size][filter_size]={
 		{// first filter
 			{
 				{1,0,0},
@@ -165,7 +164,7 @@ int main(void){
 	stream_input << axi_tmp;
 
 // execute the conv2d
-	conv2d(stream_filter, stream_input, stream_output, input_size, 1, 1);
+	conv2d(stream_filter, stream_input, stream_output, input_size, 1);
 
 // print the answer
 	int output_volume_number = filter_number;
