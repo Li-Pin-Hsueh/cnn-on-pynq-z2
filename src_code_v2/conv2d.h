@@ -1,6 +1,15 @@
 #include "hls_stream.h"
+
+#define CHANNEL 3
+
+#define MAX_BATCH 1
+#define MAX_INPUT_SIZE 64
+
 #define FILTER_SIZE 3	// 3*3 
-#define CHANNEL 3	// a Filter includes 3 Kernels
+#define MAX_NUMBER_OF_FILTER 3
+
+#define MAX_OUTPUT_SIZE 62
+
 
 struct AXI_T {
 	float data;
@@ -8,4 +17,4 @@ struct AXI_T {
 };
 typedef hls::stream<AXI_T> STREAM_T;
 // filter size K_SIZE*K_SZIE*
-void conv2d(STREAM_T &filter, STREAM_T &input, STREAM_T &output, int input_size, int n );
+void conv2d(STREAM_T &stream_filter, STREAM_T &stream_input, STREAM_T &stream_output, int input_size, int n );

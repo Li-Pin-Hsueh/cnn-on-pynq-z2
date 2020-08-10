@@ -113,7 +113,7 @@ int main(void){
 
 	
 	AXI_T axi_tmp;
-	STREAM_T stream_filter, stream_input, stream_output ;
+	STREAM_T stream_filter("Filter"), stream_input("Input"), stream_output("Output") ;
 
 // store 3*3*3*n filter data in stream<>
 	int count = 0, channel = 0, row = 0, col = 0;
@@ -169,7 +169,7 @@ int main(void){
 // print the answer
 	int output_volume_number = filter_number;
 	int output_volume_size = input_size - filter_size + 1;
-
+	/*
 	for( count=0; count < output_volume_number; count++ ){
 		printf("====Output Volume %d====", count+1 );
 		for( int k=0; k < (output_volume_size*output_volume_size); k++ ){
@@ -177,6 +177,7 @@ int main(void){
 			if( k+1 % output_volume_size == 0 )	printf("\n");
 		}
 	}
+	*/
 	
 
 }
