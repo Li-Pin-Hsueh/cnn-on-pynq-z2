@@ -164,7 +164,7 @@ int main(void){
 	stream_input << axi_tmp;
 
 // execute the conv2d
-	conv2d(stream_filter, stream_input, stream_output, input_size, 1);
+	conv2d(stream_filter, stream_input, stream_output, input_size, input_number, filter_number);
 
 // print the answer
 	int output_volume_number = filter_number;

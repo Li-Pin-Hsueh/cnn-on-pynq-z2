@@ -17,4 +17,4 @@ struct AXI_T {
 };
 typedef hls::stream<AXI_T> STREAM_T;
 // filter size K_SIZE*K_SZIE*
-void conv2d(STREAM_T &stream_filter, STREAM_T &stream_input, STREAM_T &stream_output, int input_size, int n );
+void conv2d(STREAM_T &stream_filter, STREAM_T &stream_input, STREAM_T &stream_output, int input_size, int input_number, int filter_number );
