@@ -78,6 +78,32 @@ int main(void){
 		} // end of first input
 	};
 	
+/*	float input[input_number][input_channel][input_size][input_size]={
+			{// first input
+					{//first channel
+							{1,0,0,0,0},
+							{1,0,0,0,0},
+							{1,0,0,0,0},
+							{1,0,0,0,0},
+							{1,0,0,0,0}
+					},
+					{
+							{1,0,0,0,0},
+							{1,0,0,0,0},
+							{1,0,0,0,0},
+							{1,0,0,0,0},
+							{1,0,0,0,0}
+					},
+					{
+							{1,0,0,0,0},
+							{1,0,0,0,0},
+							{1,0,0,0,0},
+							{1,0,0,0,0},
+							{1,0,0,0,0}
+					}
+			}
+	};
+*/
 	float filter[filter_number][filter_channel][filter_size][filter_size]={
 		{// first filter
 			{
@@ -99,13 +125,13 @@ int main(void){
 	};
 
 // Print Info
-	printf("====Input Volume Info====\n");
+	printf("\n====Input Volume Info====\n");
 	printf("Input Height: %d\n", input_size);
 	printf("Input Width: %d\n", input_size);
 	printf("Input Channel: %d\n", input_channel);
 	printf("Input Number: %d\n", input_number);
 
-	printf("====Filter Info====\n");
+	printf("\n====Filter Info====\n");
 	printf("Filter Height: %d\n", filter_size);
 	printf("Filter Width: %d\n", filter_size);
 	printf("Filter Channel: %d\n", filter_channel);
@@ -123,7 +149,7 @@ int main(void){
 				for( col=0; col < filter_size; col++ ){
 
 					// check the last data
-					if( count==filter_number && channel==filter_channel && row==filter_size && col==filter_size)
+					if( count==filter_number-1 && channel==filter_channel-1 && row==filter_size-1 && col==filter_size-1)
 						break;
 
 					// not the last data
@@ -147,7 +173,7 @@ int main(void){
 				for( col=0; col < input_size; col++ ){
 
 					// check the last data
-					if( count==input_number && channel==input_channel && row==input_size && col==input_size)
+					if( count==input_number-1 && channel==input_channel-1 && row==input_size-1 && col==input_size-1)
 						break;
 
 					// not the last data
@@ -169,15 +195,17 @@ int main(void){
 // print the answer
 	int output_volume_number = filter_number;
 	int output_volume_size = input_size - filter_size + 1;
-	/*
-	for( count=0; count < output_volume_number; count++ ){
-		printf("====Output Volume %d====", count+1 );
-		for( int k=0; k < (output_volume_size*output_volume_size); k++ ){
-			printf("%d  ", stream_output.read());
-			if( k+1 % output_volume_size == 0 )	printf("\n");
-		}
+	count = 1;
+
+	printf("\n=====output volume=======\n");
+	while( !stream_output.empty() ){
+
+		printf("%.1f  ", stream_output.read().data);
+		if( count % output_volume_size == 0 ) printf("\n");
+		if( count % (output_volume_size*output_volume_size) == 0 ) printf("=========\n");
+		count ++;
 	}
-	*/
 	
+
 
 }
