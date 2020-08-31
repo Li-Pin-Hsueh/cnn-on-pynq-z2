@@ -6,10 +6,11 @@
 open_project hls_proj_v2
 set_top conv2d
 add_files src_code_v2/conv2d.cpp
-add_files -tb src_code_v2/tb_conv2d.cpp
+add_files -tb src_code_v2/tb_conv2d.cpp -cflags "-Wno-unknown-pragmas" -csimflags "-Wno-unknown-pragmas"
 open_solution "solution1"
-set_part {xc7z020clg400-1}
+set_part {xc7z020-clg400-1}
 create_clock -period 10 -name default
+config_export -format ip_catalog -rtl verilog
 #source "./hls_proj_v2/solution1/directives.tcl"
 csim_design
 csynth_design
