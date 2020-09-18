@@ -1,0 +1,8 @@
+conv2d_fadd_32ns_bkb
+conv2d_fmul_32ns_cud
+conv2d_input
+conv2d_kernel
+conv2d_output
+conv2d_AXILiteS_s_axi
+regslice_core
+conv2d

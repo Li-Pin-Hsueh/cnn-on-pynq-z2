@@ -3,78 +3,86 @@
 
 
 
-void conv2d(STREAM_T &stream_filter, STREAM_T &stream_input, STREAM_T &stream_output, int input_size, int input_number, int filter_number ){
+void conv2d(STREAM_T &stream_kernel, STREAM_T &stream_input, STREAM_T &stream_output, int input_row, int input_col){
 // define port
 	#pragma HLS INTERFACE axis port=stream_kernel
 	#pragma HLS INTERFACE axis port=stream_input
 	#pragma HLS INTERFACE axis port=stream_output
-	#pragma HLS INTERFACE s_axilite port=input_size
-	#pragma HLS INTERFACE s_axilite port=input_number
-	#pragma HLS INTERFACE s_axilite port=filter_number
+	#pragma HLS INTERFACE s_axilite port=input_row
+	#pragma HLS INTERFACE s_axilite port=input_col
+
 	#pragma HLS INTERFACE ap_ctrl_none port=return
 
 // define index and tmp variable
-    int count = 0, channel = 0, row = 0, col = 0;
+    int count = 0, row = 0, col = 0;
     int debug_count = 0;
     AXI_T axi_tmp;
 
 // allocate memory for containers.
-    float input[MAX_BATCH][CHANNEL][MAX_INPUT_SIZE][MAX_INPUT_SIZE] ;   // batch:256, channel:3, matrix 64*64(max case)
-    float filter[MAX_NUMBER_OF_FILTER][CHANNEL][FILTER_SIZE][FILTER_SIZE]    ;   // number of filter:3, channel:3, kernel 3*3
-    float output[MAX_NUMBER_OF_FILTER][MAX_OUTPUT_SIZE][MAX_OUTPUT_SIZE]     ;   // numebr of output:3, matrix: 62*62(max case)
+    float input[MAX_INPUT_ROW][MAX_INPUT_COL] ;   				 	// matrix 64*64(max case)
+    float kernel[KERNEL_ROW][KERNEL_COL]    ;   				// kernel 3*3
+    float output[MAX_OUTPUT_ROW][MAX_OUTPUT_COL]     ;   			// 62*62(max case)
     
-// load filter data
-    for( count = 0 ; count < filter_number ;count ++ ){
-        for( channel = 0 ; channel < CHANNEL ; channel ++){
-            for( row = 0 ; row < FILTER_SIZE ; row ++){
-                for( col = 0 ; col < FILTER_SIZE && !stream_filter.empty()  ; col ++){
-                    axi_tmp = stream_filter.read();
-                    filter[count][channel][row][col] = axi_tmp.data;
-                }
-            }
+// load kernle data
+
+    for( row = 0 ; row < KERNEL_ROW ; row ++){
+    	for( col = 0 ; col < KERNEL_COL ; col ++){
+       	    axi_tmp = stream_kernel.read();
+            kernel[row][col] = axi_tmp.data;
+            if(axi_tmp.last)
+            	break;
         }
     }
 
+
 // load input data
-    for( count = 0 ; count < input_number ; count ++ ){
-        for( channel = 0 ; channel < CHANNEL ; channel ++){
-            for( row = 0 ; row < input_size ; row ++){
-                for( col = 0 ; col < input_size && !stream_input.empty()  ; col ++){
-                    axi_tmp = stream_input.read();
-                    input[count][channel][row][col] = axi_tmp.data;
-                }
-            }
+
+    for( row = 0 ; row < input_row ; row ++){
+    	for( col = 0 ; col < input_col ; col ++){
+       	    axi_tmp = stream_input.read();
+            input[row][col] = axi_tmp.data;
+            if(axi_tmp.last)
+            	break;
         }
     }
 
 // conv2d computation
-    int input_count = 0, filter_count = 0;
-    int map_boundary = input_size - FILTER_SIZE + 1 ;
+    float x = 0;
+    int i = 0, j = 0;
     int m = 0, n = 0;
-    float x = 0, sum = 0;
+    row = 0, col = 0;
+    int row_boundary = input_row - KERNEL_ROW + 1 ; 	// find the index of sliding window boundary
+    int col_boundary = input_col - KERNEL_COL + 1 ;
 
-    for( input_count = 0 ; input_count < input_number ; input_count++ ){
-    	for( filter_count = 0 ; filter_count <  filter_number ; filter_count++ ){
+    for( row=0 ; row < row_boundary ; row ++ ){
+    	for( col = 0 ; col < col_boundary ; col ++ ){
+	   
+    		output[row][col] = 0; // initialize
 
-
-			for( row = 0 ; row < map_boundary ; row ++ ){
-				for( col = 0 ; col < map_boundary ; col ++ ){
-					sum = 0;
-					for( channel = 0 ; channel < CHANNEL ; channel ++){
-						x = 0 ;
-						for( m = 0 ; m < FILTER_SIZE ; m++ ){
-							for( n = 0 ; n < FILTER_SIZE ; n++ ){
-								x += input[input_count][channel][row+m][col+n] * filter[filter_count][channel][m][n];
-							}
-						}
-						sum += x;
-					} // end of channel iteration
-					axi_tmp.data = sum ;
-					stream_output << axi_tmp;
-				}// end of decide boundary
-			}
-
+    		// W * b
+    		for( m = 0 ; m < KERNEL_ROW ; m++ ){
+    			for( n = 0 ; n < KERNEL_COL ; n++ ){
+    				x = input[row+m][col+n] * kernel[m][n] ;
+    				output[row][col] += x ;
+    			}
+    		}
     	}
     }
 
+//  store output in stream
+    int output_row = input_row - KERNEL_ROW + 1 ;
+    int output_col = input_col - KERNEL_COL + 1 ;
+
+    for( row = 0 ; row < output_row ; row++){
+        for( col = 0 ; col < output_col ; col++){
+
+	        if( row == output_row-1 && col == output_col-1)
+	        	axi_tmp.last = 1 ;
+	        else
+	        	axi_tmp.last = 0 ;
+
+	        axi_tmp.data = output[row][col] ;
+	        stream_output << axi_tmp;
+        }
+    }
 }

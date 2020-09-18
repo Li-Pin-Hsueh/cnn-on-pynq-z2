@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xd:acceleratorMap xmlns:xd="http://www.xilinx.com/xidane" xd:functionName="conv2d" xd:componentRef="conv2d" xd:initiationInterval="x" xd:clockPeriod="10.000" xd:sequential="true" xd:hostMachine="64" xd:reset="control">
+  <xd:arg xd:name="stream_kernel.data" xd:originalName="stream_kernel" xd:direction="in" xd:interfaceRef="stream_kernel" xd:busTypeRef="axis" xd:dataWidth="32"/>
+  <xd:arg xd:name="stream_kernel.last" xd:originalName="stream_kernel" xd:direction="in" xd:interfaceRef="stream_kernel" xd:busTypeRef="axis" xd:dataWidth="1"/>
+  <xd:arg xd:name="stream_input.data" xd:originalName="stream_input" xd:direction="in" xd:interfaceRef="stream_input" xd:busTypeRef="axis" xd:dataWidth="32"/>
+  <xd:arg xd:name="stream_input.last" xd:originalName="stream_input" xd:direction="in" xd:interfaceRef="stream_input" xd:busTypeRef="axis" xd:dataWidth="1"/>
+  <xd:arg xd:name="stream_output.data" xd:originalName="stream_output" xd:direction="out" xd:interfaceRef="stream_output" xd:busTypeRef="axis" xd:dataWidth="32"/>
+  <xd:arg xd:name="stream_output.last" xd:originalName="stream_output" xd:direction="out" xd:interfaceRef="stream_output" xd:busTypeRef="axis" xd:dataWidth="1"/>
+  <xd:arg xd:name="input_row" xd:originalName="input_row" xd:direction="in" xd:interfaceRef="s_axi_AXILiteS" xd:busTypeRef="axilite" xd:offset="0x10" xd:handshakeRef="ap_none" xd:dataWidth="32"/>
+  <xd:arg xd:name="input_col" xd:originalName="input_col" xd:direction="in" xd:interfaceRef="s_axi_AXILiteS" xd:busTypeRef="axilite" xd:offset="0x18" xd:handshakeRef="ap_none" xd:dataWidth="32"/>
+  <xd:latencyEstimates xd:best-case="undef" xd:worst-case="undef" xd:average-case="undef"/>
+  <xd:resourceEstimates xd:LUT="1998" xd:FF="1318" xd:BRAM="16" xd:DSP="5"/>
+</xd:acceleratorMap>
