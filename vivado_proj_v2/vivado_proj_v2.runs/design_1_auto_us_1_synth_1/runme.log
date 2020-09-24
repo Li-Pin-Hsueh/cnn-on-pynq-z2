@@ -1,4 +1,0 @@
-
-*** Running vivado
-    with args -log design_1_auto_us_1.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source design_1_auto_us_1.tcl
-

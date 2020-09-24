@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<autopilotfilemapping:AutoPilotFileMapping xmlns:autopilotfilemapping="www.autoesl.com/autopilotfilemapping">
-  <source>
-    <originFiles name="conv2d.cpp" path="C:\Users\Vincent\Desktop\cnn-on-pynq-z2\src_code_v2\conv2d.cpp"/>
-  </source>
-  <testbench>
-    <originFiles name="tb_conv2d.cpp" path="C:\Users\Vincent\Desktop\cnn-on-pynq-z2\src_code_v2\tb_conv2d.cpp"/>
-  </testbench>
-</autopilotfilemapping:AutoPilotFileMapping>

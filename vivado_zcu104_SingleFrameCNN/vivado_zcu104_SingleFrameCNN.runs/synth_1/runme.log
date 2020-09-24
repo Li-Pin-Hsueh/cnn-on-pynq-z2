@@ -1,0 +1,326 @@
+
+*** Running vivado
+    with args -log design_1_wrapper.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source design_1_wrapper.tcl
+
+
+
+****** Vivado v2020.1 (64-bit)
+  **** SW Build 2902540 on Wed May 27 19:54:49 MDT 2020
+  **** IP Build 2902112 on Wed May 27 22:43:36 MDT 2020
+    ** Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+
+source design_1_wrapper.tcl -notrace
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/Vincent/Desktop/cnn-on-pynq-z2/hls_zcu104_SingleFrameCNN/solution1/impl'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/Xilinx/Vivado/2020.1/data/ip'.
+WARNING: [IP_Flow 19-4995] The host OS only allows 260 characters in a normal path. The IP cache path is more than 80 characters. If you experience issues with IP caching, please consider changing the IP cache to a location with a shorter path. Alternately consider using the OS subst command to map part of the path to a drive letter. 
+Current IP cache path is c:/Users/Vincent/Desktop/cnn-on-pynq-z2/vivado_zcu104_SingleFrameCNN/vivado_zcu104_SingleFrameCNN.cache/ip 
+add_files: Time (s): cpu = 00:00:04 ; elapsed = 00:00:06 . Memory (MB): peak = 1030.371 ; gain = 0.000
+Command: synth_design -top design_1_wrapper -part xczu7ev-ffvc1156-2-e
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xczu7ev'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xczu7ev'
+INFO: [Device 21-403] Loading part xczu7ev-ffvc1156-2-e
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 17152
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 1599.426 ; gain = 85.465
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'design_1_wrapper' [C:/Users/Vincent/Desktop/cnn-on-pynq-z2/vivado_zcu104_SingleFrameCNN/vivado_zcu104_SingleFrameCNN.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.v:12]
+INFO: [Synth 8-6157] synthesizing module 'design_1' [C:/Users/Vincent/Desktop/cnn-on-pynq-z2/vivado_zcu104_SingleFrameCNN/vivado_zcu104_SingleFrameCNN.srcs/sources_1/bd/design_1/synth/design_1.v:13]
+INFO: [Synth 8-6157] synthesizing module 'design_1_axi_smc_0' [C:/Users/Vincent/Desktop/cnn-on-pynq-z2/vivado_zcu104_SingleFrameCNN/vivado_zcu104_SingleFrameCNN.runs/synth_1/.Xil/Vivado-17292-DESKTOP-DQ2I52E/realtime/design_1_axi_smc_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_axi_smc_0' (1#1) [C:/Users/Vincent/Desktop/cnn-on-pynq-z2/vivado_zcu104_SingleFrameCNN/vivado_zcu104_SingleFrameCNN.runs/synth_1/.Xil/Vivado-17292-DESKTOP-DQ2I52E/realtime/design_1_axi_smc_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'design_1_conv2d_0_0' [C:/Users/Vincent/Desktop/cnn-on-pynq-z2/vivado_zcu104_SingleFrameCNN/vivado_zcu104_SingleFrameCNN.runs/synth_1/.Xil/Vivado-17292-DESKTOP-DQ2I52E/realtime/design_1_conv2d_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_conv2d_0_0' (2#1) [C:/Users/Vincent/Desktop/cnn-on-pynq-z2/vivado_zcu104_SingleFrameCNN/vivado_zcu104_SingleFrameCNN.runs/synth_1/.Xil/Vivado-17292-DESKTOP-DQ2I52E/realtime/design_1_conv2d_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'design_1_axi_dma_0_0' [C:/Users/Vincent/Desktop/cnn-on-pynq-z2/vivado_zcu104_SingleFrameCNN/vivado_zcu104_SingleFrameCNN.runs/synth_1/.Xil/Vivado-17292-DESKTOP-DQ2I52E/realtime/design_1_axi_dma_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_axi_dma_0_0' (3#1) [C:/Users/Vincent/Desktop/cnn-on-pynq-z2/vivado_zcu104_SingleFrameCNN/vivado_zcu104_SingleFrameCNN.runs/synth_1/.Xil/Vivado-17292-DESKTOP-DQ2I52E/realtime/design_1_axi_dma_0_0_stub.v:6]
+WARNING: [Synth 8-7071] port 'mm2s_prmry_reset_out_n' of module 'design_1_axi_dma_0_0' is unconnected for instance 'dma_input' [C:/Users/Vincent/Desktop/cnn-on-pynq-z2/vivado_zcu104_SingleFrameCNN/vivado_zcu104_SingleFrameCNN.srcs/sources_1/bd/design_1/synth/design_1.v:346]
+WARNING: [Synth 8-7071] port 'm_axis_mm2s_tkeep' of module 'design_1_axi_dma_0_0' is unconnected for instance 'dma_input' [C:/Users/Vincent/Desktop/cnn-on-pynq-z2/vivado_zcu104_SingleFrameCNN/vivado_zcu104_SingleFrameCNN.srcs/sources_1/bd/design_1/synth/design_1.v:346]
+WARNING: [Synth 8-7071] port 'mm2s_introut' of module 'design_1_axi_dma_0_0' is unconnected for instance 'dma_input' [C:/Users/Vincent/Desktop/cnn-on-pynq-z2/vivado_zcu104_SingleFrameCNN/vivado_zcu104_SingleFrameCNN.srcs/sources_1/bd/design_1/synth/design_1.v:346]
+WARNING: [Synth 8-7071] port 'axi_dma_tstvec' of module 'design_1_axi_dma_0_0' is unconnected for instance 'dma_input' [C:/Users/Vincent/Desktop/cnn-on-pynq-z2/vivado_zcu104_SingleFrameCNN/vivado_zcu104_SingleFrameCNN.srcs/sources_1/bd/design_1/synth/design_1.v:346]
+WARNING: [Synth 8-7023] instance 'dma_input' of module 'design_1_axi_dma_0_0' has 40 connections declared, but only 36 given [C:/Users/Vincent/Desktop/cnn-on-pynq-z2/vivado_zcu104_SingleFrameCNN/vivado_zcu104_SingleFrameCNN.srcs/sources_1/bd/design_1/synth/design_1.v:346]
+INFO: [Synth 8-6157] synthesizing module 'design_1_axi_dma_1_0' [C:/Users/Vincent/Desktop/cnn-on-pynq-z2/vivado_zcu104_SingleFrameCNN/vivado_zcu104_SingleFrameCNN.runs/synth_1/.Xil/Vivado-17292-DESKTOP-DQ2I52E/realtime/design_1_axi_dma_1_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_axi_dma_1_0' (4#1) [C:/Users/Vincent/Desktop/cnn-on-pynq-z2/vivado_zcu104_SingleFrameCNN/vivado_zcu104_SingleFrameCNN.runs/synth_1/.Xil/Vivado-17292-DESKTOP-DQ2I52E/realtime/design_1_axi_dma_1_0_stub.v:6]
+WARNING: [Synth 8-7071] port 'mm2s_prmry_reset_out_n' of module 'design_1_axi_dma_1_0' is unconnected for instance 'dma_kernel_output' [C:/Users/Vincent/Desktop/cnn-on-pynq-z2/vivado_zcu104_SingleFrameCNN/vivado_zcu104_SingleFrameCNN.srcs/sources_1/bd/design_1/synth/design_1.v:383]
+WARNING: [Synth 8-7071] port 'm_axis_mm2s_tkeep' of module 'design_1_axi_dma_1_0' is unconnected for instance 'dma_kernel_output' [C:/Users/Vincent/Desktop/cnn-on-pynq-z2/vivado_zcu104_SingleFrameCNN/vivado_zcu104_SingleFrameCNN.srcs/sources_1/bd/design_1/synth/design_1.v:383]
+WARNING: [Synth 8-7071] port 's2mm_prmry_reset_out_n' of module 'design_1_axi_dma_1_0' is unconnected for instance 'dma_kernel_output' [C:/Users/Vincent/Desktop/cnn-on-pynq-z2/vivado_zcu104_SingleFrameCNN/vivado_zcu104_SingleFrameCNN.srcs/sources_1/bd/design_1/synth/design_1.v:383]
+WARNING: [Synth 8-7071] port 'mm2s_introut' of module 'design_1_axi_dma_1_0' is unconnected for instance 'dma_kernel_output' [C:/Users/Vincent/Desktop/cnn-on-pynq-z2/vivado_zcu104_SingleFrameCNN/vivado_zcu104_SingleFrameCNN.srcs/sources_1/bd/design_1/synth/design_1.v:383]
+WARNING: [Synth 8-7071] port 's2mm_introut' of module 'design_1_axi_dma_1_0' is unconnected for instance 'dma_kernel_output' [C:/Users/Vincent/Desktop/cnn-on-pynq-z2/vivado_zcu104_SingleFrameCNN/vivado_zcu104_SingleFrameCNN.srcs/sources_1/bd/design_1/synth/design_1.v:383]
+WARNING: [Synth 8-7071] port 'axi_dma_tstvec' of module 'design_1_axi_dma_1_0' is unconnected for instance 'dma_kernel_output' [C:/Users/Vincent/Desktop/cnn-on-pynq-z2/vivado_zcu104_SingleFrameCNN/vivado_zcu104_SingleFrameCNN.srcs/sources_1/bd/design_1/synth/design_1.v:383]
+WARNING: [Synth 8-7023] instance 'dma_kernel_output' of module 'design_1_axi_dma_1_0' has 64 connections declared, but only 58 given [C:/Users/Vincent/Desktop/cnn-on-pynq-z2/vivado_zcu104_SingleFrameCNN/vivado_zcu104_SingleFrameCNN.srcs/sources_1/bd/design_1/synth/design_1.v:383]
+INFO: [Synth 8-6157] synthesizing module 'design_1_ps8_0_axi_periph_0' [C:/Users/Vincent/Desktop/cnn-on-pynq-z2/vivado_zcu104_SingleFrameCNN/vivado_zcu104_SingleFrameCNN.srcs/sources_1/bd/design_1/synth/design_1.v:708]
+INFO: [Synth 8-6157] synthesizing module 'm00_couplers_imp_QJIMLI' [C:/Users/Vincent/Desktop/cnn-on-pynq-z2/vivado_zcu104_SingleFrameCNN/vivado_zcu104_SingleFrameCNN.srcs/sources_1/bd/design_1/synth/design_1.v:1536]
+INFO: [Synth 8-6155] done synthesizing module 'm00_couplers_imp_QJIMLI' (5#1) [C:/Users/Vincent/Desktop/cnn-on-pynq-z2/vivado_zcu104_SingleFrameCNN/vivado_zcu104_SingleFrameCNN.srcs/sources_1/bd/design_1/synth/design_1.v:1536]
+INFO: [Synth 8-6157] synthesizing module 'm01_couplers_imp_1D3SAH3' [C:/Users/Vincent/Desktop/cnn-on-pynq-z2/vivado_zcu104_SingleFrameCNN/vivado_zcu104_SingleFrameCNN.srcs/sources_1/bd/design_1/synth/design_1.v:1668]
+INFO: [Synth 8-6155] done synthesizing module 'm01_couplers_imp_1D3SAH3' (6#1) [C:/Users/Vincent/Desktop/cnn-on-pynq-z2/vivado_zcu104_SingleFrameCNN/vivado_zcu104_SingleFrameCNN.srcs/sources_1/bd/design_1/synth/design_1.v:1668]
+INFO: [Synth 8-6157] synthesizing module 's00_couplers_imp_1A7ZMW4' [C:/Users/Vincent/Desktop/cnn-on-pynq-z2/vivado_zcu104_SingleFrameCNN/vivado_zcu104_SingleFrameCNN.srcs/sources_1/bd/design_1/synth/design_1.v:1793]
+INFO: [Synth 8-6157] synthesizing module 'design_1_auto_ds_0' [C:/Users/Vincent/Desktop/cnn-on-pynq-z2/vivado_zcu104_SingleFrameCNN/vivado_zcu104_SingleFrameCNN.runs/synth_1/.Xil/Vivado-17292-DESKTOP-DQ2I52E/realtime/design_1_auto_ds_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_auto_ds_0' (7#1) [C:/Users/Vincent/Desktop/cnn-on-pynq-z2/vivado_zcu104_SingleFrameCNN/vivado_zcu104_SingleFrameCNN.runs/synth_1/.Xil/Vivado-17292-DESKTOP-DQ2I52E/realtime/design_1_auto_ds_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'design_1_auto_pc_0' [C:/Users/Vincent/Desktop/cnn-on-pynq-z2/vivado_zcu104_SingleFrameCNN/vivado_zcu104_SingleFrameCNN.runs/synth_1/.Xil/Vivado-17292-DESKTOP-DQ2I52E/realtime/design_1_auto_pc_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_auto_pc_0' (8#1) [C:/Users/Vincent/Desktop/cnn-on-pynq-z2/vivado_zcu104_SingleFrameCNN/vivado_zcu104_SingleFrameCNN.runs/synth_1/.Xil/Vivado-17292-DESKTOP-DQ2I52E/realtime/design_1_auto_pc_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 's00_couplers_imp_1A7ZMW4' (9#1) [C:/Users/Vincent/Desktop/cnn-on-pynq-z2/vivado_zcu104_SingleFrameCNN/vivado_zcu104_SingleFrameCNN.srcs/sources_1/bd/design_1/synth/design_1.v:1793]
+INFO: [Synth 8-6157] synthesizing module 'design_1_xbar_0' [C:/Users/Vincent/Desktop/cnn-on-pynq-z2/vivado_zcu104_SingleFrameCNN/vivado_zcu104_SingleFrameCNN.runs/synth_1/.Xil/Vivado-17292-DESKTOP-DQ2I52E/realtime/design_1_xbar_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_xbar_0' (10#1) [C:/Users/Vincent/Desktop/cnn-on-pynq-z2/vivado_zcu104_SingleFrameCNN/vivado_zcu104_SingleFrameCNN.runs/synth_1/.Xil/Vivado-17292-DESKTOP-DQ2I52E/realtime/design_1_xbar_0_stub.v:6]
+WARNING: [Synth 8-689] width (4) of port connection 'm_axi_wstrb' does not match port width (8) of module 'design_1_xbar_0' [C:/Users/Vincent/Desktop/cnn-on-pynq-z2/vivado_zcu104_SingleFrameCNN/vivado_zcu104_SingleFrameCNN.srcs/sources_1/bd/design_1/synth/design_1.v:1218]
+WARNING: [Synth 8-7071] port 'm_axi_awprot' of module 'design_1_xbar_0' is unconnected for instance 'xbar' [C:/Users/Vincent/Desktop/cnn-on-pynq-z2/vivado_zcu104_SingleFrameCNN/vivado_zcu104_SingleFrameCNN.srcs/sources_1/bd/design_1/synth/design_1.v:1200]
+WARNING: [Synth 8-7071] port 'm_axi_arprot' of module 'design_1_xbar_0' is unconnected for instance 'xbar' [C:/Users/Vincent/Desktop/cnn-on-pynq-z2/vivado_zcu104_SingleFrameCNN/vivado_zcu104_SingleFrameCNN.srcs/sources_1/bd/design_1/synth/design_1.v:1200]
+WARNING: [Synth 8-7023] instance 'xbar' of module 'design_1_xbar_0' has 40 connections declared, but only 38 given [C:/Users/Vincent/Desktop/cnn-on-pynq-z2/vivado_zcu104_SingleFrameCNN/vivado_zcu104_SingleFrameCNN.srcs/sources_1/bd/design_1/synth/design_1.v:1200]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_ps8_0_axi_periph_0' (11#1) [C:/Users/Vincent/Desktop/cnn-on-pynq-z2/vivado_zcu104_SingleFrameCNN/vivado_zcu104_SingleFrameCNN.srcs/sources_1/bd/design_1/synth/design_1.v:708]
+INFO: [Synth 8-6157] synthesizing module 'design_1_ps8_0_axi_periph_1_0' [C:/Users/Vincent/Desktop/cnn-on-pynq-z2/vivado_zcu104_SingleFrameCNN/vivado_zcu104_SingleFrameCNN.srcs/sources_1/bd/design_1/synth/design_1.v:1241]
+INFO: [Synth 8-6157] synthesizing module 's00_couplers_imp_1VXTOR1' [C:/Users/Vincent/Desktop/cnn-on-pynq-z2/vivado_zcu104_SingleFrameCNN/vivado_zcu104_SingleFrameCNN.srcs/sources_1/bd/design_1/synth/design_1.v:2203]
+INFO: [Synth 8-6157] synthesizing module 'design_1_auto_ds_1' [C:/Users/Vincent/Desktop/cnn-on-pynq-z2/vivado_zcu104_SingleFrameCNN/vivado_zcu104_SingleFrameCNN.runs/synth_1/.Xil/Vivado-17292-DESKTOP-DQ2I52E/realtime/design_1_auto_ds_1_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_auto_ds_1' (12#1) [C:/Users/Vincent/Desktop/cnn-on-pynq-z2/vivado_zcu104_SingleFrameCNN/vivado_zcu104_SingleFrameCNN.runs/synth_1/.Xil/Vivado-17292-DESKTOP-DQ2I52E/realtime/design_1_auto_ds_1_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'design_1_auto_pc_1' [C:/Users/Vincent/Desktop/cnn-on-pynq-z2/vivado_zcu104_SingleFrameCNN/vivado_zcu104_SingleFrameCNN.runs/synth_1/.Xil/Vivado-17292-DESKTOP-DQ2I52E/realtime/design_1_auto_pc_1_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_auto_pc_1' (13#1) [C:/Users/Vincent/Desktop/cnn-on-pynq-z2/vivado_zcu104_SingleFrameCNN/vivado_zcu104_SingleFrameCNN.runs/synth_1/.Xil/Vivado-17292-DESKTOP-DQ2I52E/realtime/design_1_auto_pc_1_stub.v:6]
+WARNING: [Synth 8-7071] port 'm_axi_awprot' of module 'design_1_auto_pc_1' is unconnected for instance 'auto_pc' [C:/Users/Vincent/Desktop/cnn-on-pynq-z2/vivado_zcu104_SingleFrameCNN/vivado_zcu104_SingleFrameCNN.srcs/sources_1/bd/design_1/synth/design_1.v:2542]
+WARNING: [Synth 8-7071] port 'm_axi_wstrb' of module 'design_1_auto_pc_1' is unconnected for instance 'auto_pc' [C:/Users/Vincent/Desktop/cnn-on-pynq-z2/vivado_zcu104_SingleFrameCNN/vivado_zcu104_SingleFrameCNN.srcs/sources_1/bd/design_1/synth/design_1.v:2542]
+WARNING: [Synth 8-7071] port 'm_axi_arprot' of module 'design_1_auto_pc_1' is unconnected for instance 'auto_pc' [C:/Users/Vincent/Desktop/cnn-on-pynq-z2/vivado_zcu104_SingleFrameCNN/vivado_zcu104_SingleFrameCNN.srcs/sources_1/bd/design_1/synth/design_1.v:2542]
+WARNING: [Synth 8-7023] instance 'auto_pc' of module 'design_1_auto_pc_1' has 56 connections declared, but only 53 given [C:/Users/Vincent/Desktop/cnn-on-pynq-z2/vivado_zcu104_SingleFrameCNN/vivado_zcu104_SingleFrameCNN.srcs/sources_1/bd/design_1/synth/design_1.v:2542]
+INFO: [Synth 8-6155] done synthesizing module 's00_couplers_imp_1VXTOR1' (14#1) [C:/Users/Vincent/Desktop/cnn-on-pynq-z2/vivado_zcu104_SingleFrameCNN/vivado_zcu104_SingleFrameCNN.srcs/sources_1/bd/design_1/synth/design_1.v:2203]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_ps8_0_axi_periph_1_0' (15#1) [C:/Users/Vincent/Desktop/cnn-on-pynq-z2/vivado_zcu104_SingleFrameCNN/vivado_zcu104_SingleFrameCNN.srcs/sources_1/bd/design_1/synth/design_1.v:1241]
+INFO: [Synth 8-6157] synthesizing module 'design_1_rst_ps8_0_96M_0' [C:/Users/Vincent/Desktop/cnn-on-pynq-z2/vivado_zcu104_SingleFrameCNN/vivado_zcu104_SingleFrameCNN.runs/synth_1/.Xil/Vivado-17292-DESKTOP-DQ2I52E/realtime/design_1_rst_ps8_0_96M_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_rst_ps8_0_96M_0' (16#1) [C:/Users/Vincent/Desktop/cnn-on-pynq-z2/vivado_zcu104_SingleFrameCNN/vivado_zcu104_SingleFrameCNN.runs/synth_1/.Xil/Vivado-17292-DESKTOP-DQ2I52E/realtime/design_1_rst_ps8_0_96M_0_stub.v:6]
+WARNING: [Synth 8-7071] port 'mb_reset' of module 'design_1_rst_ps8_0_96M_0' is unconnected for instance 'rst_ps8_0_96M' [C:/Users/Vincent/Desktop/cnn-on-pynq-z2/vivado_zcu104_SingleFrameCNN/vivado_zcu104_SingleFrameCNN.srcs/sources_1/bd/design_1/synth/design_1.v:581]
+WARNING: [Synth 8-7071] port 'bus_struct_reset' of module 'design_1_rst_ps8_0_96M_0' is unconnected for instance 'rst_ps8_0_96M' [C:/Users/Vincent/Desktop/cnn-on-pynq-z2/vivado_zcu104_SingleFrameCNN/vivado_zcu104_SingleFrameCNN.srcs/sources_1/bd/design_1/synth/design_1.v:581]
+WARNING: [Synth 8-7071] port 'peripheral_reset' of module 'design_1_rst_ps8_0_96M_0' is unconnected for instance 'rst_ps8_0_96M' [C:/Users/Vincent/Desktop/cnn-on-pynq-z2/vivado_zcu104_SingleFrameCNN/vivado_zcu104_SingleFrameCNN.srcs/sources_1/bd/design_1/synth/design_1.v:581]
+WARNING: [Synth 8-7071] port 'interconnect_aresetn' of module 'design_1_rst_ps8_0_96M_0' is unconnected for instance 'rst_ps8_0_96M' [C:/Users/Vincent/Desktop/cnn-on-pynq-z2/vivado_zcu104_SingleFrameCNN/vivado_zcu104_SingleFrameCNN.srcs/sources_1/bd/design_1/synth/design_1.v:581]
+WARNING: [Synth 8-7023] instance 'rst_ps8_0_96M' of module 'design_1_rst_ps8_0_96M_0' has 10 connections declared, but only 6 given [C:/Users/Vincent/Desktop/cnn-on-pynq-z2/vivado_zcu104_SingleFrameCNN/vivado_zcu104_SingleFrameCNN.srcs/sources_1/bd/design_1/synth/design_1.v:581]
+INFO: [Synth 8-6157] synthesizing module 'design_1_zynq_ultra_ps_e_0_0' [C:/Users/Vincent/Desktop/cnn-on-pynq-z2/vivado_zcu104_SingleFrameCNN/vivado_zcu104_SingleFrameCNN.runs/synth_1/.Xil/Vivado-17292-DESKTOP-DQ2I52E/realtime/design_1_zynq_ultra_ps_e_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_zynq_ultra_ps_e_0_0' (17#1) [C:/Users/Vincent/Desktop/cnn-on-pynq-z2/vivado_zcu104_SingleFrameCNN/vivado_zcu104_SingleFrameCNN.runs/synth_1/.Xil/Vivado-17292-DESKTOP-DQ2I52E/realtime/design_1_zynq_ultra_ps_e_0_0_stub.v:6]
+WARNING: [Synth 8-7071] port 'maxigp0_awuser' of module 'design_1_zynq_ultra_ps_e_0_0' is unconnected for instance 'zynq_ultra_ps_e_0' [C:/Users/Vincent/Desktop/cnn-on-pynq-z2/vivado_zcu104_SingleFrameCNN/vivado_zcu104_SingleFrameCNN.srcs/sources_1/bd/design_1/synth/design_1.v:588]
+WARNING: [Synth 8-7071] port 'maxigp0_aruser' of module 'design_1_zynq_ultra_ps_e_0_0' is unconnected for instance 'zynq_ultra_ps_e_0' [C:/Users/Vincent/Desktop/cnn-on-pynq-z2/vivado_zcu104_SingleFrameCNN/vivado_zcu104_SingleFrameCNN.srcs/sources_1/bd/design_1/synth/design_1.v:588]
+WARNING: [Synth 8-7071] port 'maxigp1_awuser' of module 'design_1_zynq_ultra_ps_e_0_0' is unconnected for instance 'zynq_ultra_ps_e_0' [C:/Users/Vincent/Desktop/cnn-on-pynq-z2/vivado_zcu104_SingleFrameCNN/vivado_zcu104_SingleFrameCNN.srcs/sources_1/bd/design_1/synth/design_1.v:588]
+WARNING: [Synth 8-7071] port 'maxigp1_aruser' of module 'design_1_zynq_ultra_ps_e_0_0' is unconnected for instance 'zynq_ultra_ps_e_0' [C:/Users/Vincent/Desktop/cnn-on-pynq-z2/vivado_zcu104_SingleFrameCNN/vivado_zcu104_SingleFrameCNN.srcs/sources_1/bd/design_1/synth/design_1.v:588]
+WARNING: [Synth 8-7071] port 'saxigp0_bid' of module 'design_1_zynq_ultra_ps_e_0_0' is unconnected for instance 'zynq_ultra_ps_e_0' [C:/Users/Vincent/Desktop/cnn-on-pynq-z2/vivado_zcu104_SingleFrameCNN/vivado_zcu104_SingleFrameCNN.srcs/sources_1/bd/design_1/synth/design_1.v:588]
+WARNING: [Synth 8-7071] port 'saxigp0_rid' of module 'design_1_zynq_ultra_ps_e_0_0' is unconnected for instance 'zynq_ultra_ps_e_0' [C:/Users/Vincent/Desktop/cnn-on-pynq-z2/vivado_zcu104_SingleFrameCNN/vivado_zcu104_SingleFrameCNN.srcs/sources_1/bd/design_1/synth/design_1.v:588]
+WARNING: [Synth 8-7023] instance 'zynq_ultra_ps_e_0' of module 'design_1_zynq_ultra_ps_e_0_0' has 123 connections declared, but only 117 given [C:/Users/Vincent/Desktop/cnn-on-pynq-z2/vivado_zcu104_SingleFrameCNN/vivado_zcu104_SingleFrameCNN.srcs/sources_1/bd/design_1/synth/design_1.v:588]
+INFO: [Synth 8-6155] done synthesizing module 'design_1' (18#1) [C:/Users/Vincent/Desktop/cnn-on-pynq-z2/vivado_zcu104_SingleFrameCNN/vivado_zcu104_SingleFrameCNN.srcs/sources_1/bd/design_1/synth/design_1.v:13]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_wrapper' (19#1) [C:/Users/Vincent/Desktop/cnn-on-pynq-z2/vivado_zcu104_SingleFrameCNN/vivado_zcu104_SingleFrameCNN.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.v:12]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 1655.898 ; gain = 141.938
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1673.773 ; gain = 159.813
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1673.773 ; gain = 159.813
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.065 . Memory (MB): peak = 1673.773 ; gain = 0.000
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [c:/Users/Vincent/Desktop/cnn-on-pynq-z2/vivado_zcu104_SingleFrameCNN/vivado_zcu104_SingleFrameCNN.srcs/sources_1/bd/design_1/ip/design_1_zynq_ultra_ps_e_0_0/design_1_zynq_ultra_ps_e_0_0/design_1_zynq_ultra_ps_e_0_0_in_context.xdc] for cell 'design_1_i/zynq_ultra_ps_e_0'
+WARNING: [Vivado 12-584] No ports matched ''. [c:/Users/Vincent/Desktop/cnn-on-pynq-z2/vivado_zcu104_SingleFrameCNN/vivado_zcu104_SingleFrameCNN.srcs/sources_1/bd/design_1/ip/design_1_zynq_ultra_ps_e_0_0/design_1_zynq_ultra_ps_e_0_0/design_1_zynq_ultra_ps_e_0_0_in_context.xdc:2]
+Finished Parsing XDC File [c:/Users/Vincent/Desktop/cnn-on-pynq-z2/vivado_zcu104_SingleFrameCNN/vivado_zcu104_SingleFrameCNN.srcs/sources_1/bd/design_1/ip/design_1_zynq_ultra_ps_e_0_0/design_1_zynq_ultra_ps_e_0_0/design_1_zynq_ultra_ps_e_0_0_in_context.xdc] for cell 'design_1_i/zynq_ultra_ps_e_0'
+Parsing XDC File [c:/Users/Vincent/Desktop/cnn-on-pynq-z2/vivado_zcu104_SingleFrameCNN/vivado_zcu104_SingleFrameCNN.srcs/sources_1/bd/design_1/ip/design_1_conv2d_0_0/design_1_conv2d_0_0/design_1_conv2d_0_0_in_context.xdc] for cell 'design_1_i/conv2d_0'
+Finished Parsing XDC File [c:/Users/Vincent/Desktop/cnn-on-pynq-z2/vivado_zcu104_SingleFrameCNN/vivado_zcu104_SingleFrameCNN.srcs/sources_1/bd/design_1/ip/design_1_conv2d_0_0/design_1_conv2d_0_0/design_1_conv2d_0_0_in_context.xdc] for cell 'design_1_i/conv2d_0'
+Parsing XDC File [c:/Users/Vincent/Desktop/cnn-on-pynq-z2/vivado_zcu104_SingleFrameCNN/vivado_zcu104_SingleFrameCNN.srcs/sources_1/bd/design_1/ip/design_1_axi_dma_0_0/design_1_axi_dma_0_0/design_1_axi_dma_0_0_in_context.xdc] for cell 'design_1_i/dma_input'
+Finished Parsing XDC File [c:/Users/Vincent/Desktop/cnn-on-pynq-z2/vivado_zcu104_SingleFrameCNN/vivado_zcu104_SingleFrameCNN.srcs/sources_1/bd/design_1/ip/design_1_axi_dma_0_0/design_1_axi_dma_0_0/design_1_axi_dma_0_0_in_context.xdc] for cell 'design_1_i/dma_input'
+Parsing XDC File [c:/Users/Vincent/Desktop/cnn-on-pynq-z2/vivado_zcu104_SingleFrameCNN/vivado_zcu104_SingleFrameCNN.srcs/sources_1/bd/design_1/ip/design_1_axi_dma_1_0/design_1_axi_dma_1_0/design_1_axi_dma_1_0_in_context.xdc] for cell 'design_1_i/dma_kernel_output'
+Finished Parsing XDC File [c:/Users/Vincent/Desktop/cnn-on-pynq-z2/vivado_zcu104_SingleFrameCNN/vivado_zcu104_SingleFrameCNN.srcs/sources_1/bd/design_1/ip/design_1_axi_dma_1_0/design_1_axi_dma_1_0/design_1_axi_dma_1_0_in_context.xdc] for cell 'design_1_i/dma_kernel_output'
+Parsing XDC File [c:/Users/Vincent/Desktop/cnn-on-pynq-z2/vivado_zcu104_SingleFrameCNN/vivado_zcu104_SingleFrameCNN.srcs/sources_1/bd/design_1/ip/design_1_axi_smc_0/design_1_axi_smc_0/design_1_axi_smc_0_in_context.xdc] for cell 'design_1_i/axi_smc'
+Finished Parsing XDC File [c:/Users/Vincent/Desktop/cnn-on-pynq-z2/vivado_zcu104_SingleFrameCNN/vivado_zcu104_SingleFrameCNN.srcs/sources_1/bd/design_1/ip/design_1_axi_smc_0/design_1_axi_smc_0/design_1_axi_smc_0_in_context.xdc] for cell 'design_1_i/axi_smc'
+Parsing XDC File [c:/Users/Vincent/Desktop/cnn-on-pynq-z2/vivado_zcu104_SingleFrameCNN/vivado_zcu104_SingleFrameCNN.srcs/sources_1/bd/design_1/ip/design_1_rst_ps8_0_96M_0/design_1_rst_ps8_0_96M_0/design_1_rst_ps8_0_96M_0_in_context.xdc] for cell 'design_1_i/rst_ps8_0_96M'
+Finished Parsing XDC File [c:/Users/Vincent/Desktop/cnn-on-pynq-z2/vivado_zcu104_SingleFrameCNN/vivado_zcu104_SingleFrameCNN.srcs/sources_1/bd/design_1/ip/design_1_rst_ps8_0_96M_0/design_1_rst_ps8_0_96M_0/design_1_rst_ps8_0_96M_0_in_context.xdc] for cell 'design_1_i/rst_ps8_0_96M'
+Parsing XDC File [c:/Users/Vincent/Desktop/cnn-on-pynq-z2/vivado_zcu104_SingleFrameCNN/vivado_zcu104_SingleFrameCNN.srcs/sources_1/bd/design_1/ip/design_1_xbar_0/design_1_xbar_0/design_1_xbar_0_in_context.xdc] for cell 'design_1_i/ps8_0_axi_periph/xbar'
+Finished Parsing XDC File [c:/Users/Vincent/Desktop/cnn-on-pynq-z2/vivado_zcu104_SingleFrameCNN/vivado_zcu104_SingleFrameCNN.srcs/sources_1/bd/design_1/ip/design_1_xbar_0/design_1_xbar_0/design_1_xbar_0_in_context.xdc] for cell 'design_1_i/ps8_0_axi_periph/xbar'
+Parsing XDC File [c:/Users/Vincent/Desktop/cnn-on-pynq-z2/vivado_zcu104_SingleFrameCNN/vivado_zcu104_SingleFrameCNN.srcs/sources_1/bd/design_1/ip/design_1_auto_ds_0/design_1_auto_ds_0/design_1_auto_ds_0_in_context.xdc] for cell 'design_1_i/ps8_0_axi_periph/s00_couplers/auto_ds'
+Finished Parsing XDC File [c:/Users/Vincent/Desktop/cnn-on-pynq-z2/vivado_zcu104_SingleFrameCNN/vivado_zcu104_SingleFrameCNN.srcs/sources_1/bd/design_1/ip/design_1_auto_ds_0/design_1_auto_ds_0/design_1_auto_ds_0_in_context.xdc] for cell 'design_1_i/ps8_0_axi_periph/s00_couplers/auto_ds'
+Parsing XDC File [c:/Users/Vincent/Desktop/cnn-on-pynq-z2/vivado_zcu104_SingleFrameCNN/vivado_zcu104_SingleFrameCNN.srcs/sources_1/bd/design_1/ip/design_1_auto_pc_0/design_1_auto_pc_0/design_1_auto_pc_0_in_context.xdc] for cell 'design_1_i/ps8_0_axi_periph/s00_couplers/auto_pc'
+Finished Parsing XDC File [c:/Users/Vincent/Desktop/cnn-on-pynq-z2/vivado_zcu104_SingleFrameCNN/vivado_zcu104_SingleFrameCNN.srcs/sources_1/bd/design_1/ip/design_1_auto_pc_0/design_1_auto_pc_0/design_1_auto_pc_0_in_context.xdc] for cell 'design_1_i/ps8_0_axi_periph/s00_couplers/auto_pc'
+Parsing XDC File [c:/Users/Vincent/Desktop/cnn-on-pynq-z2/vivado_zcu104_SingleFrameCNN/vivado_zcu104_SingleFrameCNN.srcs/sources_1/bd/design_1/ip/design_1_auto_ds_1/design_1_auto_ds_1/design_1_auto_ds_0_in_context.xdc] for cell 'design_1_i/ps8_0_axi_periph_1/s00_couplers/auto_ds'
+Finished Parsing XDC File [c:/Users/Vincent/Desktop/cnn-on-pynq-z2/vivado_zcu104_SingleFrameCNN/vivado_zcu104_SingleFrameCNN.srcs/sources_1/bd/design_1/ip/design_1_auto_ds_1/design_1_auto_ds_1/design_1_auto_ds_0_in_context.xdc] for cell 'design_1_i/ps8_0_axi_periph_1/s00_couplers/auto_ds'
+Parsing XDC File [c:/Users/Vincent/Desktop/cnn-on-pynq-z2/vivado_zcu104_SingleFrameCNN/vivado_zcu104_SingleFrameCNN.srcs/sources_1/bd/design_1/ip/design_1_auto_pc_1/design_1_auto_pc_1/design_1_auto_pc_0_in_context.xdc] for cell 'design_1_i/ps8_0_axi_periph_1/s00_couplers/auto_pc'
+Finished Parsing XDC File [c:/Users/Vincent/Desktop/cnn-on-pynq-z2/vivado_zcu104_SingleFrameCNN/vivado_zcu104_SingleFrameCNN.srcs/sources_1/bd/design_1/ip/design_1_auto_pc_1/design_1_auto_pc_1/design_1_auto_pc_0_in_context.xdc] for cell 'design_1_i/ps8_0_axi_periph_1/s00_couplers/auto_pc'
+Parsing XDC File [C:/Users/Vincent/Desktop/cnn-on-pynq-z2/vivado_zcu104_SingleFrameCNN/vivado_zcu104_SingleFrameCNN.runs/synth_1/dont_touch.xdc]
+Finished Parsing XDC File [C:/Users/Vincent/Desktop/cnn-on-pynq-z2/vivado_zcu104_SingleFrameCNN/vivado_zcu104_SingleFrameCNN.runs/synth_1/dont_touch.xdc]
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1757.270 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.057 . Memory (MB): peak = 1757.270 ; gain = 0.000
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 1757.270 ; gain = 243.309
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xczu7ev-ffvc1156-2-e
+INFO: [Synth 8-6742] Reading net delay rules and data
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 1757.270 ; gain = 243.309
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+Applied set_property DONT_TOUCH = true for design_1_i. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for design_1_i/zynq_ultra_ps_e_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for design_1_i/conv2d_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for design_1_i/dma_input. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for design_1_i/dma_kernel_output. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for design_1_i/axi_smc. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for design_1_i/rst_ps8_0_96M. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for design_1_i/ps8_0_axi_periph/xbar. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for design_1_i/ps8_0_axi_periph/s00_couplers/auto_ds. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for design_1_i/ps8_0_axi_periph/s00_couplers/auto_pc. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for design_1_i/ps8_0_axi_periph. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for design_1_i/ps8_0_axi_periph_1/s00_couplers/auto_ds. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for design_1_i/ps8_0_axi_periph_1/s00_couplers/auto_pc. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for design_1_i/ps8_0_axi_periph_1. (constraint file  auto generated constraint, line ).
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 1757.270 ; gain = 243.309
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 1757.270 ; gain = 243.309
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 1728 (col length:144)
+BRAMs: 624 (col length: RAMB18 144 RAMB36 72)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 1757.270 ; gain = 243.309
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:26 ; elapsed = 00:00:28 . Memory (MB): peak = 2342.617 ; gain = 828.656
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:26 ; elapsed = 00:00:28 . Memory (MB): peak = 2342.691 ; gain = 828.730
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:26 ; elapsed = 00:00:28 . Memory (MB): peak = 2363.641 ; gain = 849.680
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:33 ; elapsed = 00:00:35 . Memory (MB): peak = 2369.438 ; gain = 855.477
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:33 ; elapsed = 00:00:35 . Memory (MB): peak = 2369.438 ; gain = 855.477
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:33 ; elapsed = 00:00:35 . Memory (MB): peak = 2369.438 ; gain = 855.477
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:33 ; elapsed = 00:00:35 . Memory (MB): peak = 2369.438 ; gain = 855.477
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:33 ; elapsed = 00:00:35 . Memory (MB): peak = 2369.438 ; gain = 855.477
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:33 ; elapsed = 00:00:35 . Memory (MB): peak = 2369.438 ; gain = 855.477
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++------+-----------------------------+----------+
+|      |BlackBox name                |Instances |
++------+-----------------------------+----------+
+|1     |design_1_xbar_0              |         1|
+|2     |design_1_auto_ds_0           |         1|
+|3     |design_1_auto_pc_0           |         1|
+|4     |design_1_auto_ds_1           |         1|
+|5     |design_1_auto_pc_1           |         1|
+|6     |design_1_axi_smc_0           |         1|
+|7     |design_1_conv2d_0_0          |         1|
+|8     |design_1_axi_dma_0_0         |         1|
+|9     |design_1_axi_dma_1_0         |         1|
+|10    |design_1_rst_ps8_0_96M_0     |         1|
+|11    |design_1_zynq_ultra_ps_e_0_0 |         1|
++------+-----------------------------+----------+
+
+Report Cell Usage: 
++------+---------------------------+------+
+|      |Cell                       |Count |
++------+---------------------------+------+
+|1     |design_1_auto_ds           |     2|
+|3     |design_1_auto_pc           |     2|
+|5     |design_1_axi_dma_0         |     1|
+|6     |design_1_axi_dma_1         |     1|
+|7     |design_1_axi_smc           |     1|
+|8     |design_1_conv2d_0          |     1|
+|9     |design_1_rst_ps8_0_96M     |     1|
+|10    |design_1_xbar              |     1|
+|11    |design_1_zynq_ultra_ps_e_0 |     1|
++------+---------------------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:33 ; elapsed = 00:00:35 . Memory (MB): peak = 2369.438 ; gain = 855.477
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:23 ; elapsed = 00:00:29 . Memory (MB): peak = 2369.438 ; gain = 771.980
+Synthesis Optimization Complete : Time (s): cpu = 00:00:33 ; elapsed = 00:00:35 . Memory (MB): peak = 2369.438 ; gain = 855.477
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.059 . Memory (MB): peak = 2369.438 ; gain = 0.000
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2413.195 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Common 17-83] Releasing license: Synthesis
+54 Infos, 34 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:44 ; elapsed = 00:00:48 . Memory (MB): peak = 2418.195 ; gain = 1387.824
+INFO: [Common 17-1381] The checkpoint 'C:/Users/Vincent/Desktop/cnn-on-pynq-z2/vivado_zcu104_SingleFrameCNN/vivado_zcu104_SingleFrameCNN.runs/synth_1/design_1_wrapper.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file design_1_wrapper_utilization_synth.rpt -pb design_1_wrapper_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Thu Sep 24 11:35:30 2020...
